@@ -31,4 +31,6 @@ router.delete("/delete/:id", isAuthenticated, isActivated, deletevent);
 
 router.post("/registerevent/:id", isAuthenticated, isActivated, registerevent);
 
+
+
 module.exports = router;

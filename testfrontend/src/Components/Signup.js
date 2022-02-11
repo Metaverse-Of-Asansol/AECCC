@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Axios from "axios";
 import { Api } from "../backend";
 import { useNavigate } from "react-router-dom";
-import Cookies from 'js-cookie'
+import Cookies from "js-cookie";
 
 const Signup = () => {
   const [registerdata, setRegisterdata] = useState({
@@ -39,7 +39,7 @@ const Signup = () => {
 
     if (dataposted.data.success) {
       console.log("User Created Successfully");
-      Cookies.set('token', dataposted.data.token)
+      Cookies.set("token", dataposted.data.token);
       navigate("/verify");
     } else {
       console.log("User Not Created Successfully");
@@ -56,7 +56,7 @@ const Signup = () => {
 
   return (
     <>
-      <form onSubmit={(e) => submit(e)}>
+      <form onSubmit={(e) => submit(e)} enctype="multipart/form-data">
         <input
           type="text"
           name="firstName"
@@ -137,7 +137,7 @@ const Signup = () => {
           value={registerdata.github}
           placeholder="Enter your Github URL"
         />
-
+        <input type="file" name="sampleimage" />
         <button>Register</button>
       </form>
     </>

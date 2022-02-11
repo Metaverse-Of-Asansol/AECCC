@@ -1,7 +1,12 @@
 var express = require("express");
 var router = express.Router();
 const { check, validationResult } = require("express-validator");
-const { register, login, verifyOTP } = require("../controllers/auth");
+const {
+  register,
+  login,
+  verifyOTP,
+  imageupload,
+} = require("../controllers/auth");
 const { isAuthenticated, isActivated } = require("../middlewares/verify");
 const { dashboard } = require("../controllers/user");
 
@@ -34,5 +39,6 @@ router.get("/dashboard", isAuthenticated, isActivated, dashboard);
 router.get("/dashboardtry", isAuthenticated, (req, res) => {
   return res.json({ message: "Welcome To proected Route", user: req.user });
 });
+router.post("/imageupload", isAuthenticated, isActivated, imageupload);
 
 module.exports = router;
