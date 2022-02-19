@@ -101,7 +101,7 @@ h1 {
 #password+span svg, #confirmPassword+span svg{
   margin-top: 0.4rem;
   position: absolute;
-  top: .4rem;
+  top: .48rem;
   right: .3rem;
   z-index: 1111;
   color: rgba(151, 151, 151, 0.692);
@@ -182,6 +182,20 @@ h1 {
     height: 1.2rem;
     margin-top: 0.3rem;
   }
+  /*for signin page ----> */
+  .useridPass{
+    width: fit-content;
+    margin: 0 auto;
+  }
+  .useridPass .details{
+    width: fit-content;
+  }
+  #signin-heading{
+    font-size: 1.15rem;
+  }
+  .user-login p{
+    font-size: .9rem;
+  }
 }
 @media (max-width : 354px){
   form{
@@ -197,5 +211,10 @@ h1 {
   }
   .user-img{
     text-align: center;
+  }
+
+  /*for signin page ----> */
+  #signin-heading{
+    font-size:0.87rem;
   }
 }

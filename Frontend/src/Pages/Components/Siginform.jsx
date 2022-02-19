@@ -58,7 +58,8 @@ const Siginform = () => {
   return (
     <>
       <form onSubmit={(e) => submit(e)}>
-        <h1>Sign In with your UID and Password</h1>
+        <h1 id='signin-heading'>Sign In with your UID and Password</h1>
+        <div className="useridPass">
         <div className='details'>
           <label htmlFor='uid'>User ID : </label>
           <br />
@@ -78,6 +79,7 @@ const Siginform = () => {
         <div className='details'>
           <label htmlFor='password'>Password : </label>
           <br />
+          <div className="inline-input-svg">
           <input
             type={viewPassword ? 'text' : 'password'}
             name='password'
@@ -92,6 +94,8 @@ const Siginform = () => {
           <span onClick={togglePassword}>
             {viewPassword ? <AiFillEyeInvisible /> : <AiFillEye />}
           </span>
+          </div>
+        </div>
         </div>
 
         <button className='btn login-signup-btn'>Sign In</button>
